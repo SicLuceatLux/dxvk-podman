@@ -2,7 +2,7 @@
 
 # A POSIX variable
 OPTIND=1  # Reset in case getopts has been used previously in the shell.
-IMAGE=${IMAGE:-"cheald/dxvk-docker:latest"}
+IMAGE=${IMAGE:-"dxvk-podman:latest"}
 DXVK_REPO=${DXVK_REPO:-"https://github.com/doitsujin/dxvk.git"}
 DEFAULT_GITREF=master
 GITREF=""
@@ -87,7 +87,7 @@ fi
 
 case $forceBuild in
   [yY])
-    docker run -e UID=$UID -e GID=$(id -g $USER) -it -v $(pwd)/$REPO_DIR:/root/build $IMAGE
+    podman run --security-opt label=disabled -it -v $(pwd)/$REPO_DIR:/var/tmp/build $IMAGE
     rm -rf out
     mkdir out
     mv $REPO_DIR/out/dxvk-master out/$targetDir

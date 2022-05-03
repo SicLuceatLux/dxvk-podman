@@ -21,7 +21,7 @@ RUN update-alternatives --set x86_64-w64-mingw32-gcc /usr/bin/x86_64-w64-mingw32
     update-alternatives --set i686-w64-mingw32-gcc /usr/bin/i686-w64-mingw32-gcc-posix && \
     update-alternatives --set i686-w64-mingw32-g++ /usr/bin/i686-w64-mingw32-g++-posix
 
-WORKDIR /root/build
-RUN mkdir -p /root/out/dxvk-master
-ADD build.sh /root/build.sh
-CMD ["/root/build.sh"]
+WORKDIR /var/tmp/build
+RUN mkdir -p /var/tmp/out/dxvk-master
+ADD build.sh /var/tmp/build.sh
+CMD ["/var/tmp/build.sh"]
