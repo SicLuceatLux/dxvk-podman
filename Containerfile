@@ -23,5 +23,5 @@ RUN update-alternatives --set x86_64-w64-mingw32-gcc /usr/bin/x86_64-w64-mingw32
 
 WORKDIR /var/tmp/build
 RUN mkdir -p /var/tmp/out/dxvk-master
-ADD build.sh /var/tmp/build.sh
-CMD ["/var/tmp/build.sh"]
+ADD build.sh /var/tmp/build-dxvk.sh
+CMD ["/var/tmp/build-dxvk.sh"]
