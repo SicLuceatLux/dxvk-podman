@@ -1,4 +1,4 @@
 #!/bin/bash
-mkdir -p /root/build/out
-/root/build/package-release.sh master /root/build/out --no-package
-chown -R $UID:$GID /root/build/out
+mkdir -p /var/tmp/build/out
+/var/tmp/build/package-release.sh master /var/tmp/build/out --no-package
+
